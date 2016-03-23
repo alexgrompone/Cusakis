@@ -1,0 +1,83 @@
+#--------------------------- Tool Specifications -------------------------
+#
+# Modify the following macros to reflect the tools you wish to use for
+# compiling and linking your code.
+#
+CC = /usr/local/matlab/bin/mex
+LD = $(CC)
+ 
+MACHINE     = irobotcomunication1
+TARGET      = sfun
+CHART_SRCS 	= \
+		c2_irobotcomunication1.c
+MACHINE_SRC	= irobotcomunication1_sfun.c
+MACHINE_REG = irobotcomunication1_sfun_registry.c
+MEX_WRAPPER =
+MAKEFILE    = irobotcomunication1_sfun.mku
+MATLAB_ROOT	= /usr/local/matlab/toolbox/stateflow/stateflow/../../..
+BUILDARGS   = 
+#------------------------------ Include/Lib Path ------------------------------
+ 
+USER_INCLUDES = -I/home/prime/Desktop/iRobotCreate/sfprj/build/irobotcomunication1/sfun/src -I/home/prime/Desktop/iRobotCreate 
+MATLAB_INCLUDES = -I$(MATLAB_ROOT)/simulink/include \
+						-I$(MATLAB_ROOT)/extern/include \
+						-I/usr/local/matlab/stateflow/c/mex/include \
+						-I/usr/local/matlab/stateflow/c/debugger/include
+
+DSP_INCLUDES    = -I/usr/local/matlab/toolbox/eml/lib/dsp
+
+INCLUDE_PATH = -I/home/prime/Desktop/iRobotCreate/sfprj/build/irobotcomunication1/sfun/src -I/home/prime/Desktop/iRobotCreate  $(MATLAB_INCLUDES) $(DSP_INCLUDES) $(COMPILER_INCLUDES)
+ 
+#----------------- Compiler and Linker Options --------------------------------
+ 
+# Optimization Options
+OPT_OPTS = -O
+ 
+# General User Options
+OPTS =
+ 
+CC_OPTS = $(OPT_OPTS) $(OPTS)
+CPP_REQ_DEFINES = -DMATLAB_MEX_FILE
+ 
+# Uncomment this line to move warning level to W4
+# cflags = $(cflags:W3=W4)
+CFLAGS = $(CC_OPTS) $(CPP_REQ_DEFINES) $(INCLUDE_PATH)
+ 
+LDFLAGS = 
+ 
+#----------------------------- Source Files -----------------------------------
+ 
+REQ_SRCS  = $(MACHINE_SRC) $(MACHINE_REG) $(MEX_WRAPPER) $(CHART_SRCS)
+
+USER_ABS_OBJS =
+
+REQ_OBJS = $(REQ_SRCS:.cpp=.o)
+REQ_OBJS2 = $(REQ_OBJS:.c=.o)
+OBJS = $(REQ_OBJS2) $(USER_ABS_OBJS)
+OBJLIST_FILE = irobotcomunication1_sfun.mol
+SFCLIB = /usr/local/matlab/stateflow/c/mex/lib/glnx86/sfc_mex.a /usr/local/matlab/stateflow/c/debugger/lib/glnx86/sfc_debug.a /usr/local/matlab/toolbox/dspblks/lib/glnx86/dsp_sim_rt.a
+USER_LIBS =
+LINK_MACHINE_LIBS =
+FIXEDPOINTLIB = -L/usr/local/matlab/bin/glnx86 -lfixedpoint
+UTLIB = -lut
+  MAPCSF = /usr/local/matlab/tools/glnx86/mapcsf
+   # RUN_MAPCSF_ON_UNIX is defined only if MAPCSF exists on this platform.
+   ifneq ($(wildcard $(MAPCSF)),) # run MAPCSF if it exists on this platform
+      RUN_MAPCSF_ON_UNIX =  /usr/local/matlab/tools/glnx86/mapcsf $@
+   endif
+ 
+#--------------------------------- Rules --------------------------------------
+ 
+MEX_FILE_NAME = $(MACHINE)_$(TARGET).mexglx
+ 
+ $(MEX_FILE_NAME): $(MAKEFILE) $(OBJS) $(SFCLIB) $(USER_LIBS) $(MEXLIB)
+	@echo ### Linking ...
+	$(CC) -silent -output $(MEX_FILE_NAME) $(OBJS) $(USER_LIBS) $(LINK_MACHINE_LIBS) $(SFCLIB) $(FIXEDPOINTLIB) $(UTLIB)
+	$(RUN_MAPCSF_ON_UNIX)
+
+%.o :	%.c
+	$(CC) -c $(CFLAGS) $<
+
+%.o :	%.cpp
+	$(CC) -c $(CFLAGS) $<
+

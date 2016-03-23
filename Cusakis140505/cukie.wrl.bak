@@ -1,0 +1,177 @@
+#VRML V2.0 utf8
+
+DEF SPACE Transform {
+  children [
+    DEF BASE Transform {
+      children [
+        DEF FixedLink Transform {
+          translation 7.5 0 0
+          children Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0 0 0
+              }
+            }
+            geometry Box {
+              size 5 2 2
+            }
+          }
+        }
+        DEF BaseBody Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 1 1
+            }
+          }
+          geometry Box {
+            size 10 10 10
+          }
+        }
+        DEF Joint1 Transform {
+          translation 10 0 0
+          children [
+            DEF JointBody Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.2 0.2 1
+                }
+              }
+              geometry Cylinder {
+                radius 1.2
+                height 2.2
+              }
+            }
+            DEF Link1 Transform {
+              translation 5 0 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0 0 0
+                  }
+                }
+                geometry Box {
+                  size 10 2 2
+                }
+              }
+            }
+            DEF Joint2 Transform {
+              translation 10 0 0
+              children [
+                Shape {
+                  appearance Appearance {
+                    material Material {
+                      diffuseColor 0.2 0.2 1
+                    }
+                  }
+                  geometry Cylinder {
+                    radius 1.2
+                    height 2.2
+                  }
+                }
+                DEF Link2 Transform {
+                  translation 5 0 0
+                  children Shape {
+                    appearance Appearance {
+                      material Material {
+                        diffuseColor 0 0 0
+                      }
+                    }
+                    geometry Box {
+                      size 10 2 2
+                    }
+                  }
+                }
+                DEF Joint3 Transform {
+                  translation 10 0 0
+                  children [
+                    DEF Joint3Body Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0 0 1
+                        }
+                      }
+                      geometry Cylinder {
+                        radius 1.2
+                        height 2.2
+                      }
+                    }
+                    DEF Link3 Transform {
+                      translation 2.5 0 0
+                      children DEF Link3Body Shape {
+                        appearance Appearance {
+                          material Material {
+                            diffuseColor 0 0 0
+                          }
+                        }
+                        geometry Box {
+                          size 5 2 2
+                        }
+                      }
+                    }
+                    DEF EndEffector Transform {
+                      translation 5.5 0 0
+                      children [
+                        DEF Lend Transform {
+                          translation 1.5 0 1
+                          children Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0 0
+                              }
+                            }
+                            geometry Box {
+                              size 3 2 1
+                            }
+                          }
+                        }
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.2 0.2 1
+                            }
+                          }
+                          geometry Box {
+                            size 1 2.2 4
+                          }
+                        }
+                        DEF Rend Transform {
+                          translation 1.5 0 -1
+                          children Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0 0
+                              }
+                            }
+                            geometry Box {
+                              size 3 2 1
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    DEF VIEW1 Viewpoint {
+      position 0 0 100
+    }
+    DEF SpaceBack Background {
+      skyColor 0.8 1 1
+      topUrl "" 
+      rightUrl "" 
+      leftUrl "" 
+      frontUrl "back.jpg" 
+      bottomUrl "" 
+      backUrl "" 
+    }
+    DEF VIEW2 Viewpoint {
+      position 10 100 0
+      orientation 1 0 0 -1.57
+    }
+  ]
+}

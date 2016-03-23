@@ -1,0 +1,205 @@
+#VRML V2.0 utf8
+# Created with V-Realm Builder v2.0
+# Integrated Data Systems Inc.
+# www.ids-net.com
+
+DEF OtherView Viewpoint {
+  description ""
+  position 0.5 2 0.3
+  orientation 1 0 0 -1.4
+  fieldOfView 0.5
+}
+DEF System Transform {
+  children [
+    DEF CHASER Transform {
+      children [
+        DEF Joint1 Transform {
+          translation 0.1 0 0
+          children [
+            DEF Joint1a Cylinder {
+              radius 0.01
+              height 0.02
+            }
+            DEF Link1 Transform {
+              translation 0.05 0 0
+              rotation 0 0 1 1.57
+              children DEF Link1a Cylinder {
+                radius 0.002
+                height 0.1
+              }
+            }
+            DEF Joint2 Transform {
+              translation 0.1 0 0
+              children [
+                DEF Joint2a Cylinder {
+                  radius 0.01
+                  height 0.02
+                }
+                DEF Link2 Transform {
+                  translation 0.05 0 0
+                  rotation 0 0 1 1.57
+                  children DEF Link2a Cylinder {
+                    radius 0.002
+                    height 0.1
+                  }
+                }
+                DEF Joint3 Transform {
+                  translation 0.1 0 0
+                  children [
+                    DEF Joint3a Cylinder {
+                      radius 0.01
+                      height 0.02
+                    }
+                    DEF Link3 Transform {
+                      translation 0.05 0 0
+                      rotation 0 0 1 1.57
+                      children [
+                        DEF Link3a Cylinder {
+                          radius 0.002
+                          height 0.1
+                        }
+                        DEF Hand1 Transform {
+                          translation 0 -0.04 0.005
+                          scale 0.015 0.015 0.015
+                          rotation 0 0 1 1.57
+                          children Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0 0
+                              }
+                            }
+                            geometry Box {
+                              size 2 1 0.5
+                            }
+                          }
+                        }
+                        DEF Hand2 Transform {
+                          translation 0 -0.04 -0.005
+                          scale 0.015 0.015 0.015
+                          rotation 0 0 1 1.57
+                          children Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0 0
+                              }
+                            }
+                            geometry Box {
+                              size 2 1 0.5
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url "try1.jpg" 
+            }
+          }
+          geometry Box {
+            size 0.2 0.2 0.2
+          }
+        }
+        DEF LED Transform {
+          translation -0.05 0.1 0.05
+          children Shape {
+            appearance DEF w Appearance {
+              material DEF we Material {
+                diffuseColor 1 0 0
+              }
+            }
+            geometry Box {
+              size 0.02 0.02 0.03
+            }
+          }
+        }
+        DEF LastView Transform {
+          rotation 0 1 0 -1.57
+          children [
+            DEF First Viewpoint {
+              description ""
+              position 0 2 0.2
+              orientation 1 0 0 -1.4
+              fieldOfView 0.5
+            }
+            DEF Second Viewpoint {
+              description ""
+              position 0 1.5 0.2
+              orientation 1 0 0 -1.4
+              fieldOfView 0.5
+            }
+          ]
+        }
+        DEF MobileLED Transform {
+          translation -0.05 0.1 -0.05
+          children Shape {
+            appearance DEF lok Appearance {
+              material DEF g Material {
+                diffuseColor 0 0 1
+              }
+            }
+            geometry Box {
+              size 0.02 0.02 0.03
+            }
+          }
+        }
+      ]
+    }
+    DEF TARGET Transform {
+      rotation 0 1 0 0
+      children [
+        DEF Dock Transform {
+          translation 0 0 0.05
+          children Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.53 0.393412 0.100604
+              }
+            }
+            geometry Box {
+              size 0.02 0.02 0.03
+            }
+          }
+        }
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url "try1.jpg" 
+            }
+            material Material {
+              diffuseColor 0 0 1
+            }
+          }
+          geometry Box {
+            size 0.1 0.1 0.1
+          }
+        }
+      ]
+    }
+  ]
+}
+DEF Otherview Transform {
+  rotation 0 1 0 -1.57
+  children [
+    DEF newview Viewpoint {
+      description ""
+      position 0 2 0.2
+      orientation 1 0 0 -1.4
+      fieldOfView 0.5
+    }
+    DEF Space Background {
+      topUrl "back.jpg" 
+      rightUrl "back.jpg" 
+      leftUrl "back.jpg" 
+      frontUrl "back.jpg" 
+      bottomUrl "back.jpg" 
+      backUrl "back.jpg" 
+    }
+  ]
+}

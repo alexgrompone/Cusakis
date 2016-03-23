@@ -1,0 +1,113 @@
+CC     = "C:\Program Files\MATLAB\R2013a\sys\lcc\bin\lcc.exe"
+LD     = "C:\Program Files\MATLAB\R2013a\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2013a\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2013a\sys\lcc\lib" 
+LIBFLAGS = 
+
+OBJECTS = \
+	"lccstub.obj"\
+	"CusakisME4901_sfun.obj"\
+	"c1_CusakisME4901.obj"\
+	"c2_CusakisME4901.obj"\
+	"c3_CusakisME4901.obj"\
+	"c4_CusakisME4901.obj"\
+	"c5_CusakisME4901.obj"\
+	"c6_CusakisME4901.obj"\
+	"c7_CusakisME4901.obj"\
+	"c8_CusakisME4901.obj"\
+	"c9_CusakisME4901.obj"\
+	"c10_CusakisME4901.obj"\
+	"c11_CusakisME4901.obj"\
+	"c12_CusakisME4901.obj"\
+	"c13_CusakisME4901.obj"\
+	"c14_CusakisME4901.obj"\
+	"c15_CusakisME4901.obj"\
+	"c16_CusakisME4901.obj"\
+	"c17_CusakisME4901.obj"\
+	"c18_CusakisME4901.obj"\
+	"c19_CusakisME4901.obj"\
+	"c20_CusakisME4901.obj"\
+	"c21_CusakisME4901.obj"\
+	"c22_CusakisME4901.obj"\
+	"c24_CusakisME4901.obj"\
+	"c25_CusakisME4901.obj"\
+	"c26_CusakisME4901.obj"\
+	"c35_CusakisME4901.obj"\
+	"CusakisME4901_sfun_registry.obj"\
+	"C:\Program Files\MATLAB\R2013a\sys\lcc\mex\lccdef.def"\
+	"C:\Program Files\MATLAB\R2013a\stateflow\c\mex\lib\win32\sfc_mexlcc.lib"\
+	"C:\Program Files\MATLAB\R2013a\stateflow\c\debugger\lib\win32\sfc_debuglcc.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libmx.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libmex.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libmat.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libut.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2013a\extern\lib\win32\lcc\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2013a\lib\win32\libippmwipt.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2013a\sys\lcc\include"  -I"C:\Program Files\MATLAB\R2013a\extern\include"  -I"C:\Program Files\MATLAB\R2013a\simulink\include"  -I"C:\Program Files\MATLAB\R2013a\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2013a\stateflow\c\debugger\include" 
+ 
+
+CusakisME4901_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o CusakisME4901_sfun.mexw32 @CusakisME4901_sfun.lmko
+lccstub.obj :	"C:\Program Files\MATLAB\R2013a\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2013a\sys\lcc\mex\lccstub.c"
+CusakisME4901_sfun.obj :	"CusakisME4901_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "CusakisME4901_sfun.c"
+c1_CusakisME4901.obj :	"c1_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_CusakisME4901.c"
+c2_CusakisME4901.obj :	"c2_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_CusakisME4901.c"
+c3_CusakisME4901.obj :	"c3_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_CusakisME4901.c"
+c4_CusakisME4901.obj :	"c4_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_CusakisME4901.c"
+c5_CusakisME4901.obj :	"c5_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_CusakisME4901.c"
+c6_CusakisME4901.obj :	"c6_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_CusakisME4901.c"
+c7_CusakisME4901.obj :	"c7_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_CusakisME4901.c"
+c8_CusakisME4901.obj :	"c8_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c8_CusakisME4901.c"
+c9_CusakisME4901.obj :	"c9_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c9_CusakisME4901.c"
+c10_CusakisME4901.obj :	"c10_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c10_CusakisME4901.c"
+c11_CusakisME4901.obj :	"c11_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c11_CusakisME4901.c"
+c12_CusakisME4901.obj :	"c12_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c12_CusakisME4901.c"
+c13_CusakisME4901.obj :	"c13_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c13_CusakisME4901.c"
+c14_CusakisME4901.obj :	"c14_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c14_CusakisME4901.c"
+c15_CusakisME4901.obj :	"c15_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c15_CusakisME4901.c"
+c16_CusakisME4901.obj :	"c16_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c16_CusakisME4901.c"
+c17_CusakisME4901.obj :	"c17_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c17_CusakisME4901.c"
+c18_CusakisME4901.obj :	"c18_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c18_CusakisME4901.c"
+c19_CusakisME4901.obj :	"c19_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c19_CusakisME4901.c"
+c20_CusakisME4901.obj :	"c20_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c20_CusakisME4901.c"
+c21_CusakisME4901.obj :	"c21_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c21_CusakisME4901.c"
+c22_CusakisME4901.obj :	"c22_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c22_CusakisME4901.c"
+c24_CusakisME4901.obj :	"c24_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c24_CusakisME4901.c"
+c25_CusakisME4901.obj :	"c25_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c25_CusakisME4901.c"
+c26_CusakisME4901.obj :	"c26_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c26_CusakisME4901.c"
+c35_CusakisME4901.obj :	"c35_CusakisME4901.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c35_CusakisME4901.c"
+CusakisME4901_sfun_registry.obj :	"CusakisME4901_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "CusakisME4901_sfun_registry.c"
